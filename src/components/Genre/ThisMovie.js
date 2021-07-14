@@ -26,7 +26,7 @@ export default function ThisMovie() {
             }})
     )
 
-    console.log(mov);
+
     return (<div>
         {mov.map(value => <div><center>
                 <div>{value.title}</div>
