@@ -1,0 +1,11 @@
+.box{
+    display: flex;
+    background-color: lavender;
+}
+img{
+    height: 300px;
+    width: 200px;
+}
+.main{
+    background-color: #a9a9a9;
+}
