@@ -24,7 +24,7 @@ export default function MainPage() {
                     <Route path={'/genre/:id'} component={ThisMovie}/>
                 </Switch>
             </Router></div>
-           
+
         </div>
     )
 }
