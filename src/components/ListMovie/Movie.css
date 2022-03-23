@@ -1,8 +1,25 @@
+*{
+    background-color: white;
+}
 img{
     height: 300px;
     width: 200px;
+    border-radius: 34px;
 }
 .container{
-    background-color: lightslategray;
-    border: 2px solid darkblue;
+    background-color: #b1b6b7;
+    border: 4px solid #323275;
+    border-radius: 34px;
+    justify-content: left;
+    justify-content: flex-start;
+}
+.desc{
+    display: inline-flex;
+}
+#text{
+    margin: 50px;
+
+}
+#ADD{
+    margin-left: 700px;
 }

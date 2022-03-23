@@ -1,4 +1,4 @@
-import {useParams} from 'react-router-dom'
+import {Link, useParams} from 'react-router-dom'
 import {useEffect} from 'react'
 import {axiosIstance} from "../../service/api";
 import './movieDetails.css'
@@ -27,6 +27,7 @@ export default function MovieDetails() {
             <div>language {allMovie.inform?.original_language}</div>
             <div>raiting {allMovie.inform?.vote_average}, votes {allMovie.inform?.vote_count}</div>
             <div>time {allMovie.inform?.runtime} minutes</div>
+            <button>Write comment</button><Link to={'/comments/'}>Comments</Link>
         </div>
     )
 }

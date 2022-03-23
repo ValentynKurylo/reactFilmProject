@@ -16,6 +16,7 @@ export default function Movies() {
         })
 
     }, [])
+    console.log(allMovie);
     return (<div>
         {allMovie.AllMovies.map(value => <Movie item={value} key={value.id}/>)}
     </div>)

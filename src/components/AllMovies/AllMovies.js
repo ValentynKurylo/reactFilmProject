@@ -2,6 +2,7 @@ import {useEffect} from 'react'
 import {axiosIstance} from "../../service/api";
 import {useSelector, useDispatch} from "react-redux";
 
+import Movie from "../ListMovie/Movie";
 
 import OneMovie from "./OneMovie";
 
@@ -18,7 +19,7 @@ export default function AllMovies() {
 
     }, [allMovie.page])
     return (<div>
-        {allMovie.AllMovies.map(value => <OneMovie item={value} key={value.id}/>)}
+        {allMovie.AllMovies.map(value => <Movie item={value} key={value.id}/>)}
         <center>
             <button onClick={() => {
                 if (allMovie.page > 1) {

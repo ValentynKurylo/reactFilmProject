@@ -5,6 +5,13 @@ import AllMovies from "../AllMovies/AllMovies";
 import './MainPage.css'
 import GenreMovie from "../Genre/GenreMovie";
 import ThisMovie from "../Genre/ThisMovie";
+import Users from "../Users/Users";
+import Registration from "../Registration/Registretion";
+import Enter from "../Enter/Enter";
+import Comments from "../Comments/Comments";
+import WriteComment from "../Comments/WriteComment";
+import WatchLists from "../WatchLists/WatchLists";
+import ShowWatchList from "../WatchLists/ShowWatchList";
 
 export default function MainPage() {
     return (
@@ -12,9 +19,13 @@ export default function MainPage() {
             <div><Router>
 
                 <div className={'wrap'}>
-                    <p><Link to={'/'}>All movies</Link></p>
-                    <p><Link to={'/PopularMovie'}>Popular movies</Link></p>
-                    <p><Link to={'/GenreMovie'}>Movie genres</Link></p>
+                    <Link to={'/'}><p>All movies</p></Link>
+                    <Link to={'/PopularMovie'}><p>Popular movies</p></Link>
+                    <Link to={'/GenreMovie'}><p>Movie genres</p></Link>
+                    <Link to={'/users'}><p>Users</p></Link>
+                    <Link to={'/WatchLists'}><p>Movies Lists</p></Link>
+                    <Link to={'/enter'}><p>Enter</p></Link>
+                    <Link to={'/registration'}><p>Registration</p></Link>
                 </div>
                 <Switch>
                     <Route exact={true} path={'/'} component={AllMovies}/>
@@ -22,6 +33,14 @@ export default function MainPage() {
                     <Route path={'/movie/:id'} component={MovieDetails}/>
                     <Route exact={true} path={'/GenreMovie'} component={GenreMovie}/>
                     <Route path={'/genre/:id'} component={ThisMovie}/>
+                    <Route exact={true} path={'/users'} component={Users}/>
+                    <Route exact={true} path={'/enter'} render={({props})=>{return <Enter/>}}/>
+                    <Route exact={true} path={'/registration'} component={Registration}/>
+                    <Route exact={true} path={'/comments/'} component={Comments}/>
+                    <Route exact={true} path={'/WriteComments/'} component={WriteComment}/>
+                    <Route exact={true} path={'/WatchLists/'} component={WatchLists}/>
+                    <Route exact={true} path={'/ShowWatchList/:id'} component={ShowWatchList}/>
+
                 </Switch>
             </Router></div>
 
