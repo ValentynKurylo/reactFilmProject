@@ -17,6 +17,7 @@ export default function ShowWatchList() {
     }, [])
     function AddCurrentId(e){
         e.preventDefault()
+        dispatch({type: "ADD", payload: 1})
         dispatch({type: "SET_CURRENT_LISTS_ID", payload: params.id})
     }
 

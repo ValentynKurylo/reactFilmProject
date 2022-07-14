@@ -2,6 +2,7 @@ import {useEffect, useState} from 'react'
 import {useSelector, useDispatch} from "react-redux";
 import APIService from "../../service/UserServer";
 import React from "react";
+import './Enter.css'
 
 
 
@@ -32,11 +33,15 @@ export default function Enter({props}) {
 
     return (
         <div>
-            <form method={"POST"} onSubmit={login}>
-               <input name={"username"} type={"text"} placeholder={"Enter your username"}/>
-               <input name={"password"} type={"text"} placeholder={"Create your password"}/>
-               <button type={'submit'}>Enter</button>
-            </form>
+            <center>
+                <div className={"enter"}>
+                    <form method={"POST"} onSubmit={login}>
+                        <input name={"username"} type={"text"} placeholder={"Enter your username"}/><br/>
+                        <input name={"password"} type={"text"} placeholder={"Create your password"}/><br/>
+                        <button type={'submit'}>Enter</button>
+                    </form>
+                </div>
+                </center>
         </div>
     )
 }

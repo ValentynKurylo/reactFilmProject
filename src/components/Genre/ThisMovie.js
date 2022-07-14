@@ -1,5 +1,5 @@
 import {useEffect} from 'react'
-import {useParams} from 'react-router-dom'
+import {Link, useParams} from 'react-router-dom'
 import {axiosIstance} from "../../service/api";
 import {useDispatch, useSelector} from "react-redux";
 
@@ -28,12 +28,12 @@ export default function ThisMovie() {
 
 
     return (<div>
-        {mov.map(value => <div>
+        {mov.map(value => <Link to={'/movie/' + value.id}><div>
                 <center>
                     <div>{value.title}</div>
                     <div><img src={"https://www.themoviedb.org/t/p/w600_and_h900_bestv2" + value.backdrop_path}/></div>
                 </center>
-            </div>
+            </div></Link>
         )}
         <center>
             <button onClick={() => {

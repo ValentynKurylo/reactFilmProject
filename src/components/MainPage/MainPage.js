@@ -18,15 +18,19 @@ export default function MainPage() {
         <div className={'MainWrap'}>
             <div><Router>
 
-                <div className={'wrap'}>
-                    <Link to={'/'}><p>All movies</p></Link>
-                    <Link to={'/PopularMovie'}><p>Popular movies</p></Link>
-                    <Link to={'/GenreMovie'}><p>Movie genres</p></Link>
-                    <Link to={'/users'}><p>Users</p></Link>
-                    <Link to={'/WatchLists'}><p>Movies Lists</p></Link>
-                    <Link to={'/enter'}><p>Enter</p></Link>
-                    <Link to={'/registration'}><p>Registration</p></Link>
-                </div>
+
+                <center>
+                    <div className={'wrap'}>
+                        <Link to={'/'}><p>All movies</p></Link>
+                        <Link to={'/PopularMovie'}><p>Popular movies</p></Link>
+                        <Link to={'/GenreMovie'}><p>Movie genres</p></Link>
+                        <Link to={'/users'}><p>User Profile</p></Link>
+                        <Link to={'/WatchLists'}><p>Movies Lists</p></Link>
+                        <Link to={'/enter'}><p>Enter</p></Link>
+                        <Link to={'/registration'}><p>Registration</p></Link>
+                    </div>
+                </center>
+               
                 <Switch>
                     <Route exact={true} path={'/'} component={AllMovies}/>
                     <Route exact={true} path={'/PopularMovie'} component={Movies}/>

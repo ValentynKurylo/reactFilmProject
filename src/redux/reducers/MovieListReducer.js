@@ -1,7 +1,8 @@
 const initialState = {
     UserWatchLists: [],
     CurrentList: [],
-    CurrentListID: null
+    CurrentListID: null,
+    add: 0
 }
 
 export const MovieListReducer = (state = initialState, action) => {
@@ -20,6 +21,11 @@ export const MovieListReducer = (state = initialState, action) => {
             return {
                 ...state,
                 CurrentListID: action.payload
+            }
+        case 'ADD':
+            return {
+                ...state,
+                add: action.payload
             }
 
 

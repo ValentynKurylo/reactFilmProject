@@ -14,3 +14,12 @@ img{
     border-radius: 5px;
     background-color: #384de3;
 }
+.but{
+    border-radius: 7px;
+    background-color: #384de3;
+}
+#comennt{
+    border-radius: 3px;
+    border: 2px black solid;
+    background-color: #818f96;
+}

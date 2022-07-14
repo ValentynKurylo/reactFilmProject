@@ -1,5 +1,6 @@
 import {useEffect, useState} from 'react'
 import APIService from "../../service/UserServer";
+import '../Enter/Enter.css'
 
 export default function Registration() {
     let [user, setUser] = useState({})
@@ -13,12 +14,16 @@ export default function Registration() {
     }
     return (
         <div>
-            <form method={'POST'} onSubmit={register}>
-               <input name={"username"} type={"text"} placeholder={"Enter your username"}/>
-               <input name={"email"} type={"email"} placeholder={"Enter your email"}/>
-               <input name={"password"} type={"text"} placeholder={"Create your password"}/>
-               <button type={"submit"}>Register</button>
-            </form>
+            <center>
+                <div className={"enter"}>
+                    <form method={'POST'} onSubmit={register}>
+                        <input name={"username"} type={"text"} placeholder={"Enter your username"}/><br/>
+                        <input name={"email"} type={"email"} placeholder={"Enter your email"}/><br/>
+                        <input name={"password"} type={"text"} placeholder={"Create your password"}/><br/>
+                        <button type={"submit"}>Register</button>
+                    </form>
+                </div>
+                 </center>
         </div>
     )
 }

@@ -1,10 +1,13 @@
 .wrap{
     padding: 5px;
     background-color: whitesmoke;
+    border-radius: 5px;
     display: flex;
+    margin-left: 300px;
 }
 p{
     padding: 10px;
+    margin-left: 5px;
     border: 2px solid #322e29;
     border-radius: 8px;
     text-decoration: none;

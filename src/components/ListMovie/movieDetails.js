@@ -32,6 +32,7 @@ export default function MovieDetails() {
 
     function AddMovieToList(e){
         e.preventDefault()
+        dispatch({type: "ADD", payload: 0})
         setMovieToList(movieToList.movieId = allMovie.inform.id)
         setMovieToList(movieToList.watchListId = watchList.CurrentListID)
         setMovieToList(movieToList.nameMovie = allMovie.inform.title)
@@ -41,23 +42,24 @@ export default function MovieDetails() {
     }
     return (
         <div className={'main'}>
-            <h3>{allMovie.inform?.title} <button id={"ADD2"} onClick={AddMovieToList}>Add To Movie List</button></h3>
+            <h3>{allMovie.inform?.title} { watchList.add ? <button id={"ADD2"} onClick={AddMovieToList}>Add To Movie List</button> : <div></div> }</h3>
 
             <div className={'box'}>
                 <div><img src={"https://www.themoviedb.org/t/p/w600_and_h900_bestv2" + allMovie.inform?.backdrop_path}/>
                 </div>
                 <div>{allMovie.inform?.overview}</div>
             </div>
-            <div>language {allMovie.inform?.original_language}</div>
-            <div>raiting {allMovie.inform?.vote_average}, votes {allMovie.inform?.vote_count}</div>
-            <div>time {allMovie.inform?.runtime} minutes</div>
-            <button><Link to={'/WriteComments/'}>Write Comments</Link></button>
-            <button onClick={ShowComments} onDoubleClick={()=>{
+            <p>language - {allMovie.inform?.original_language}</p>
+            <p>raiting - {allMovie.inform?.vote_average} points, votes - {allMovie.inform?.vote_count}</p>
+            <p>time {allMovie.inform?.runtime} minutes</p>
+            <p>Release Date:  {allMovie.inform?.release_date}</p>
+            <button className={"but"}><Link to={'/WriteComments/'}>Write Comments</Link></button>
+            <button className={"but"} onClick={ShowComments} onDoubleClick={()=>{
                 setShowCom(0)
             }}>comments</button>
             {
-                ShowCom ? <div>{
-                    user.comments.map(value=> <div key={value.id}> <p id={"Wrap-text"}>{value.userName} -  {value.raiting} <p id={'p'}> {value.text}</p></p></div>)
+                ShowCom ? <div id={"comennt"}> <h4>Comments:</h4>{
+                    user.comments.map(value=> <div key={value.id}> <p id={"Wrap-text"}>{value.userName} -  {value.raiting} points <p id={'p'}> {value.text}</p></p></div>)
                 }</div> : <div></div>
             }
 
